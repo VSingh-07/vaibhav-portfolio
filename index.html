@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaibhav Singh | AI Training, Evaluation & Red Teaming Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
+            --bg-color: #0b0f19;
+            --card-bg: #141b2d;
+            --card-border: #222f47;
+            --text-main: #f1f5f9;
             --text-muted: #94a3b8;
             --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --accent-hover: #7dd3fc;
         }
 
         * {
@@ -21,147 +27,266 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+            line-height: 1.7;
+            padding: 4rem 1rem;
         }
 
         .container {
-            max-width: 760px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Hero Section */
+        /* Ambient Hero Glow Effect */
         header {
-            margin-bottom: 3rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            background-image: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.03em;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .title-sub {
             color: var(--accent);
-            font-size: 1.1rem;
-            font-weight: 500;
+            font-size: 1.25rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
 
         .about-text {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
 
-        /* Section Styling */
+        /* Section Headlines */
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        /* Grid / Cards */
+        h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--card-border), transparent);
+        }
+
+        /* Quick Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Modern Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
         }
 
         .skill-card {
             background-color: var(--card-bg);
-            padding: 1.25rem;
-            border-radius: 8px;
-            border: 1px solid #334155;
+            padding: 1.5rem;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px var(--accent-glow);
         }
 
         .skill-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .skill-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
 
-        /* Timeline / Experience */
+        /* Clean Timeline Experience */
         .timeline-item {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--card-border);
             position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            border-left-color: var(--accent);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            border: 2px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover::before {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
         }
 
         .job-title {
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
         }
 
         .company-meta {
             font-size: 0.95rem;
             color: var(--accent);
-            margin-bottom: 0.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
         .job-bullets {
             list-style-type: none;
-            padding-left: 0;
         }
 
         .job-bullets li {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             position: relative;
-            padding-left: 1.2rem;
         }
 
-        .job-bullets li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+        /* Action Buttons */
+        .cta-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
         }
 
-        /* Contact Section */
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             background-color: var(--accent);
             color: var(--bg-color);
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.8rem 1.75rem;
+            border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
             background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--card-bg);
+            border-color: var(--text-muted);
+        }
+
+        .edu-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 12px;
         }
 
         footer {
             text-align: center;
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #334155;
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
             font-size: 0.85rem;
             color: var(--text-muted);
+        }
+
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.25rem; }
+            .cta-container { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        
         <header>
             <h1>Vaibhav Singh</h1>
             <div class="title-sub">AI Training, Evaluation & Red Teaming Specialist</div>
@@ -171,19 +296,36 @@
         </header>
 
         <section>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years AI Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">LLM / CV</div>
+                    <div class="stat-label">Core Focus</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Policy Compliance</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
             <h2>Core Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Trust & Safety</h3>
-                    <p>Executing adversarial testing, red teaming, and strict content moderation to secure AI outputs.</p>
+                    <h3>🛡️ Trust & Safety</h3>
+                    <p>Executing adversarial testing, red teaming, and strict content moderation to secure LLM and generative AI outputs against risk and bias.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Computer Vision</h3>
-                    <p>Object detection, semantic segmentation, bounding boxes, and masking for spatial awareness.</p>
+                    <h3>👁️ Computer Vision</h3>
+                    <p>High-precision object detection, semantic segmentation, bounding boxes, and complex masking pipelines for enhanced spatial awareness.</p>
                 </div>
                 <div class="skill-card">
-                    <h3>Model Evaluation</h3>
-                    <p>Assessing multi-turn prompts, RAG configurations, instruction adherence, and logical reasoning.</p>
+                    <h3>🧠 Model Evaluation</h3>
+                    <p>Deep assessment of multi-turn prompts, RAG system configurations, complex instruction adherence, and logical reasoning pathways.</p>
                 </div>
             </div>
         </section>
@@ -193,7 +335,7 @@
             
             <div class="timeline-item">
                 <div class="job-title">Analyst - AI/LLM</div>
-                <div class="company-meta">Innodata Inc. | Dec 2025 – Present</div>
+                <div class="company-meta">Innodata Inc. • Dec 2025 – Present</div>
                 <ul class="job-bullets">
                     <li>Annotated and structured image/video datasets for computer vision training, including bounding boxes, segmentation, and masking.</li>
                     <li>Executed targeted adversarial testing and red teaming across pipelines to mitigate risks, identify vulnerabilities, and address model bias.</li>
@@ -205,9 +347,9 @@
 
             <div class="timeline-item">
                 <div class="job-title">AI Annotator & Model Evaluation</div>
-                <div class="company-meta">Outlier | Mar 2024 – Dec 2025</div>
+                <div class="company-meta">Outlier • Mar 2024 – Dec 2025</div>
                 <ul class="job-bullets">
-                    <li>Analyzed and compared model outputs, optimizing responses to enhance logical reasoning structures.</li>
+                    <li>Analyse and compared model outputs, optimizing responses to enhance logical reasoning structures.</li>
                     <li>Evaluated AI-generated content in mathematics and science on complex STEM-based projects to ensure factual precision.</li>
                     <li>Contributed to target data preparation and model fine-tuning to elevate reliability and minimize underlying algorithmic biases.</li>
                 </ul>
@@ -216,21 +358,25 @@
 
         <section>
             <h2>Education</h2>
-            <div class="job-title">Bachelor of Arts, Geography</div>
-            <div class="company-meta">Veer Bahadur Singh Purvanchal University, Jaunpur</div>
+            <div class="edu-card">
+                <div class="job-title">Bachelor of Arts, Geography</div>
+                <div class="company-meta" style="margin-bottom: 0;">Veer Bahadur Singh Purvanchal University, Jaunpur</div>
+            </div>
         </section>
 
-        <section style="text-align: center; margin-top: 4rem;">
+        <section style="text-align: center;">
             <h2>Let's Connect</h2>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Interested in robust model evaluation, safety workflows, or data enrichment pipelines?</p>
-            <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">Connect on LinkedIn</a>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Interested in robust model evaluation, safety workflows, or data enrichment pipelines?</p>
+            <div class="cta-container">
+                <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">
+                    Connect on LinkedIn
+                </a>
+            </div>
         </section>
 
         <footer>
-            &copy; 2026 Vaibhav Singh. Built for performance.
+            &copy; 2026 Vaibhav Singh. Engineered for performance.
         </footer>
-
     </div>
-
 </body>
 </html>
