@@ -18,6 +18,7 @@
             --accent: #38bdf8;
             --accent-glow: rgba(56, 189, 248, 0.12);
             --accent-hover: #7dd3fc;
+            --nav-height: 70px;
         }
 
         * {
@@ -26,29 +27,86 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 20px);
+        }
+
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.7;
-            padding: 4rem 1rem;
+            padding-bottom: 4rem;
+        }
+
+        /* Sticky Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            background-color: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 840px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
         }
 
         .container {
             max-width: 840px;
             margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
         /* Ambient Glow behind Header */
         header {
             position: relative;
+            padding-top: 4rem;
             margin-bottom: 4rem;
         }
 
         header::before {
             content: '';
             position: absolute;
-            top: -30px;
+            top: 20px;
             left: -30px;
             width: 250px;
             height: 250px;
@@ -105,9 +163,9 @@
             text-decoration: underline;
         }
 
-        /* Structural Sections */
+        /* Clean Section Layouts */
         section {
-            margin-bottom: 45rem;
+            margin-bottom: 5rem;
             margin-top: 4rem;
         }
 
@@ -165,7 +223,7 @@
             color: var(--text-muted);
             margin-bottom: 0.4rem;
             position: relative;
-            padding-left: 1rem;
+            padding-left: 1.25rem;
         }
 
         .skill-card ul li::before {
@@ -175,7 +233,7 @@
             color: var(--accent);
         }
 
-        /* Timeline / Experience Breakdown */
+        /* Responsive Timeline Breakdown */
         .timeline-item {
             margin-bottom: 3rem;
             padding-left: 1.5rem;
@@ -192,7 +250,7 @@
             content: '';
             position: absolute;
             left: -6px;
-            top: 6px;
+            top: 8px;
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -286,10 +344,25 @@
         @media (max-width: 600px) {
             h1 { font-size: 2.3rem; }
             .meta-bar { flex-direction: column; gap: 0.5rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">VS</a>
+            <ul class="nav-links">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <h1>Vaibhav Singh</h1>
@@ -305,7 +378,7 @@
             </div>
         </header>
 
-        <section>
+        <section id="skills">
             <h2>Technical Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
@@ -351,7 +424,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="experience">
             <h2>Professional Experience</h2>
             
             <div class="timeline-item">
@@ -399,7 +472,7 @@
             </div>
         </section>
 
-        <section>
+        <section id="education">
             <h2>Education & Credentials</h2>
             <div class="edu-grid">
                 <div class="edu-card">
@@ -417,7 +490,7 @@
             </div>
         </section>
 
-        <section style="text-align: center;">
+        <section id="contact" style="text-align: center;">
             <h2>Let's Collaborate</h2>
             <p style="color: var(--text-muted);">Looking to deploy robust model evaluations, adversarial safety workflows, or high-performance dataset alignment strategies?</p>
             <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">
