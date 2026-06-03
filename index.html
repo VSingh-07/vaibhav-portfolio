@@ -96,11 +96,15 @@
             padding: 0 1.5rem;
         }
 
-        /* Ambient Glow behind Header */
+        /* Clean Two-Column Layout for Home/Header Section */
         header {
             position: relative;
             padding-top: 4rem;
             margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         header::before {
@@ -117,30 +121,40 @@
             z-index: -1;
         }
 
-        /* Flex container for name and avatar */
-        .header-main {
+        .header-text {
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 0.5rem;
+            flex-direction: column;
         }
 
         h1 {
             font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: -0.03em;
+            margin-bottom: 0.25rem;
             background: linear-gradient(to right, #ffffff, #9ca3af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        /* Upscaled Avatar Placed on the Right Side */
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .avatar-img {
-            width: 80px;
-            height: 80px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 2px solid var(--card-border);
+            border: 4px solid var(--card-border);
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s ease;
+        }
+
+        header:hover .avatar-img {
+            border-color: var(--accent);
         }
 
         .title-sub {
@@ -159,6 +173,7 @@
 
         /* Top Meta Links Bar */
         .meta-bar {
+            grid-column: 1 / -1; /* Stretch links across bottom of header */
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
@@ -166,6 +181,7 @@
             color: var(--text-muted);
             border-bottom: 1px solid var(--card-border);
             padding-bottom: 1.5rem;
+            margin-top: 1rem;
         }
 
         .meta-bar a {
@@ -357,13 +373,28 @@
             color: var(--text-muted);
         }
 
+        /* Fluid layout for small viewpoints */
+        @media (max-width: 768px) {
+            header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1.5rem;
+            }
+            .avatar-container {
+                order: -1; /* Image goes on top on mobile screens */
+            }
+            .avatar-img {
+                width: 140px;
+                height: 140px;
+            }
+            h1 { font-size: 2.5rem; }
+            .meta-bar { justify-content: center; }
+        }
+
         @media (max-width: 600px) {
-            h1 { font-size: 2.3rem; }
-            .meta-bar { flex-direction: column; gap: 0.5rem; }
+            .meta-bar { flex-direction: column; gap: 0.5rem; align-items: center; }
             .nav-links { gap: 1rem; }
             .nav-links a { font-size: 0.8rem; }
-            .avatar-img { width: 60px; height: 60px; }
-            .header-main { gap: 1rem; }
         }
     </style>
 </head>
@@ -383,15 +414,18 @@
 
     <div class="container">
         <header>
-            <div class="header-main">
+            <div class="header-text">
                 <h1>Vaibhav Singh</h1>
-                <img src="VPS.png" alt="Vaibhav Singh" class="avatar-img">
+                <div class="title-sub">AI Operations & Model Evaluation Specialist</div>
+                <p class="about-text">
+                    AI Operations and Model Evaluation professional specializing in Large Language Models (LLMs), multimodal AI systems, computer vision annotation, red teaming, and AI safety workflows. Experienced in supporting enterprise-scale AI training programs through advanced dataset development, quality assurance, prompt evaluation, adversarial testing, and content moderation.
+                </p>
             </div>
             
-            <div class="title-sub">AI Operations & Model Evaluation Specialist</div>
-            <p class="about-text">
-                AI Operations and Model Evaluation professional specializing in Large Language Models (LLMs), multimodal AI systems, computer vision annotation, red teaming, and AI safety workflows. Experienced in supporting enterprise-scale AI training programs through advanced dataset development, quality assurance, prompt evaluation, adversarial testing, and content moderation.
-            </p>
+            <div class="avatar-container">
+                <img src="VPS.png" alt="Vaibhav Singh" class="avatar-img">
+            </div>
+
             <div class="meta-bar">
                 <span>📧 <a href="mailto:Singhvaibhavprashant@gmail.com">Singhvaibhavprashant@gmail.com</a></span>
                 <span>📱 +91 7376961649</span>
@@ -514,7 +548,7 @@
 
         <section id="contact" style="text-align: center;">
             <h2>Let's Collaborate</h2>
-            <p style="color: var(--text-muted);">Looking to deploy robust model evaluations, adversarial safety workflows, or high-performance dataset alignment strategies?</p>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Looking to deploy robust model evaluations, adversarial safety workflows, or high-performance dataset alignment strategies?</p>
             <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">
                 Connect on LinkedIn
             </a>
