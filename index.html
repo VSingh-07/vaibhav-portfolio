@@ -117,14 +117,30 @@
             z-index: -1;
         }
 
+        /* Flex container for name and avatar */
+        .header-main {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
         h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
             letter-spacing: -0.03em;
             background: linear-gradient(to right, #ffffff, #9ca3af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .avatar-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--card-border);
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .title-sub {
@@ -346,6 +362,8 @@
             .meta-bar { flex-direction: column; gap: 0.5rem; }
             .nav-links { gap: 1rem; }
             .nav-links a { font-size: 0.8rem; }
+            .avatar-img { width: 60px; height: 60px; }
+            .header-main { gap: 1rem; }
         }
     </style>
 </head>
@@ -365,7 +383,11 @@
 
     <div class="container">
         <header>
-            <h1>Vaibhav Singh</h1>
+            <div class="header-main">
+                <h1>Vaibhav Singh</h1>
+                <img src="VPS.png" alt="Vaibhav Singh" class="avatar-img">
+            </div>
+            
             <div class="title-sub">AI Operations & Model Evaluation Specialist</div>
             <p class="about-text">
                 AI Operations and Model Evaluation professional specializing in Large Language Models (LLMs), multimodal AI systems, computer vision annotation, red teaming, and AI safety workflows. Experienced in supporting enterprise-scale AI training programs through advanced dataset development, quality assurance, prompt evaluation, adversarial testing, and content moderation.
