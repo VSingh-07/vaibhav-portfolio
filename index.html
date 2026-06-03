@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaibhav Singh | AI Training, Evaluation & Red Teaming Specialist</title>
+    <title>Vaibhav Singh | AI Operations, Model Evaluation & Red Teaming Specialist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #141b2d;
-            --card-border: #222f47;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
+            --bg-color: #090d16;
+            --card-bg: #111827;
+            --card-border: #1f2937;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
             --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
+            --accent-glow: rgba(56, 189, 248, 0.12);
             --accent-hover: #7dd3fc;
         }
 
@@ -35,11 +35,11 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 840px;
             margin: 0 auto;
         }
 
-        /* Ambient Hero Glow Effect */
+        /* Ambient Glow behind Header */
         header {
             position: relative;
             margin-bottom: 4rem;
@@ -48,30 +48,30 @@
         header::before {
             content: '';
             position: absolute;
-            top: -40px;
-            left: -40px;
-            width: 200px;
-            height: 200px;
+            top: -30px;
+            left: -30px;
+            width: 250px;
+            height: 250px;
             background: var(--accent);
             background-image: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            filter: blur(80px);
-            opacity: 0.15;
+            filter: blur(90px);
+            opacity: 0.12;
             z-index: -1;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
             letter-spacing: -0.03em;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            background: linear-gradient(to right, #ffffff, #9ca3af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .title-sub {
             color: var(--accent);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
             letter-spacing: -0.01em;
@@ -80,11 +80,35 @@
         .about-text {
             color: var(--text-muted);
             font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
-        /* Section Headlines */
+        /* Top Meta Links Bar */
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1.5rem;
+        }
+
+        .meta-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .meta-bar a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Structural Sections */
         section {
-            margin-bottom: 4rem;
+            margin-bottom: 45rem;
+            margin-top: 4rem;
         }
 
         h2 {
@@ -105,39 +129,10 @@
             background: linear-gradient(to right, var(--card-border), transparent);
         }
 
-        /* Quick Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-bottom: 3rem;
-        }
-
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 1rem;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Modern Skills Grid */
+        /* Skills/Expertise Grid Layout */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.25rem;
         }
 
@@ -159,19 +154,30 @@
             font-size: 1.15rem;
             margin-bottom: 0.75rem;
             color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
-        .skill-card p {
-            font-size: 0.95rem;
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card ul li {
+            font-size: 0.9rem;
             color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1rem;
         }
 
-        /* Clean Timeline Experience */
+        .skill-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Timeline / Experience Breakdown */
         .timeline-item {
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
             padding-left: 1.5rem;
             border-left: 2px solid var(--card-border);
             position: relative;
@@ -222,44 +228,13 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 0.75rem;
-            position: relative;
         }
 
-        /* Action Buttons */
-        .cta-container {
-            display: flex;
+        /* Education & Certification Cards */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--accent);
-            color: var(--bg-color);
-            padding: 0.8rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--card-bg);
-            border-color: var(--text-muted);
         }
 
         .edu-card {
@@ -267,6 +242,36 @@
             border: 1px solid var(--card-border);
             padding: 1.5rem;
             border-radius: 12px;
+        }
+
+        .edu-card h3 {
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-card p {
+            font-size: 0.95rem;
+            color: var(--accent);
+        }
+
+        /* Action Footer Area */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         footer {
@@ -279,9 +284,8 @@
         }
 
         @media (max-width: 600px) {
-            .stats-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.25rem; }
-            .cta-container { flex-direction: column; }
+            h1 { font-size: 2.3rem; }
+            .meta-bar { flex-direction: column; gap: 0.5rem; }
         }
     </style>
 </head>
@@ -289,43 +293,60 @@
     <div class="container">
         <header>
             <h1>Vaibhav Singh</h1>
-            <div class="title-sub">AI Training, Evaluation & Red Teaming Specialist</div>
+            <div class="title-sub">AI Operations & Model Evaluation Specialist</div>
             <p class="about-text">
-                As an Analyst, I drive advanced AI model training through comprehensive data annotation, labeling, and rigorous quality & policy assurance. I specialize in optimizing model evaluation, red teaming, and adversarial testing workflows across complex, multimodal datasets and pipelines.
+                AI Operations and Model Evaluation professional specializing in Large Language Models (LLMs), multimodal AI systems, computer vision annotation, red teaming, and AI safety workflows. Experienced in supporting enterprise-scale AI training programs through advanced dataset development, quality assurance, prompt evaluation, adversarial testing, and content moderation.
             </p>
+            <div class="meta-bar">
+                <span>📧 <a href="mailto:Singhvaibhavprashant@gmail.com">Singhvaibhavprashant@gmail.com</a></span>
+                <span>📱 +91 7376961649</span>
+                <span>🔗 <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank">LinkedIn</a></span>
+                <span>💻 <a href="https://github.com/VSingh-07" target="_blank">GitHub</a></span>
+            </div>
         </header>
 
         <section>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Years AI Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">LLM / CV</div>
-                    <div class="stat-label">Core Focus</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Policy Compliance</div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Core Expertise</h2>
+            <h2>Technical Skills & Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>🛡️ Trust & Safety</h3>
-                    <p>Executing adversarial testing, red teaming, and strict content moderation to secure LLM and generative AI outputs against risk and bias.</p>
+                    <h3>🧠 AI & Machine Learning</h3>
+                    <ul>
+                        <li>Large Language Models (LLMs)</li>
+                        <li>AI Model Evaluation</li>
+                        <li>Prompt Engineering</li>
+                        <li>Red Teaming & Adversarial Risks</li>
+                        <li>Dataset Development</li>
+                    </ul>
                 </div>
                 <div class="skill-card">
                     <h3>👁️ Computer Vision</h3>
-                    <p>High-precision object detection, semantic segmentation, bounding boxes, and complex masking pipelines for enhanced spatial awareness.</p>
+                    <ul>
+                        <li>Object Detection</li>
+                        <li>Semantic Segmentation</li>
+                        <li>Bounding Box Mapping</li>
+                        <li>Image & Video Masking</li>
+                        <li>Contextual Data Annotation</li>
+                    </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>🧠 Model Evaluation</h3>
-                    <p>Deep assessment of multi-turn prompts, RAG system configurations, complex instruction adherence, and logical reasoning pathways.</p>
+                    <h3>🛡️ Quality & Compliance</h3>
+                    <ul>
+                        <li>Quality Assurance Checks</li>
+                        <li>Content Moderation Pipelines</li>
+                        <li>Policy Compliance Audits</li>
+                        <li>Data Validation Engineering</li>
+                        <li>AI Safety Architecture Reviews</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>📊 Data, Retrieval & Growth</h3>
+                    <ul>
+                        <li>Metadata Tagging Engine</li>
+                        <li>RAG Optimization Frameworks</li>
+                        <li>Dataset Structuring Design</li>
+                        <li>Digital & Content Marketing</li>
+                        <li>Campaign Analytics Systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -337,45 +358,75 @@
                 <div class="job-title">Analyst - AI/LLM</div>
                 <div class="company-meta">Innodata Inc. • Dec 2025 – Present</div>
                 <ul class="job-bullets">
-                    <li>Annotated and structured image/video datasets for computer vision training, including bounding boxes, segmentation, and masking.</li>
-                    <li>Executed targeted adversarial testing and red teaming across pipelines to mitigate risks, identify vulnerabilities, and address model bias.</li>
-                    <li>Evaluated multi-turn prompt-response workflows for instruction adherence, relevance, and overall system performance.</li>
-                    <li>Conducted strict data validation, content moderation, and QA checks to enforce safety guidelines and policy compliance.</li>
-                    <li>Authored high-quality scene descriptions and metadata tags on the client platform to enhance dataset quality.</li>
+                    <li>• Annotated and validated complex image and video datasets to support the training of multimodal AI and computer vision models.</li>
+                    <li>• Performed object detection, semantic segmentation, masking, and bounding box annotation to improve model accuracy and spatial understanding.</li>
+                    <li>• Conducted red teaming and adversarial testing to identify vulnerabilities, model biases, and AI safety risks.</li>
+                    <li>• Evaluated multi-turn prompt-response workflows for instruction adherence, factual consistency, relevance, and overall model quality.</li>
+                    <li>• Generated scene descriptions, metadata tags, and contextual annotations to improve dataset quality and retrieval performance.</li>
+                    <li>• Supported AI model optimization through structured evaluation and continuous feedback processes.</li>
                 </ul>
             </div>
 
             <div class="timeline-item">
-                <div class="job-title">AI Annotator & Model Evaluation</div>
+                <div class="job-title">AI Annotator & Model Evaluation Specialist</div>
                 <div class="company-meta">Outlier • Mar 2024 – Dec 2025</div>
                 <ul class="job-bullets">
-                    <li>Analyse and compared model outputs, optimizing responses to enhance logical reasoning structures.</li>
-                    <li>Evaluated AI-generated content in mathematics and science on complex STEM-based projects to ensure factual precision.</li>
-                    <li>Contributed to target data preparation and model fine-tuning to elevate reliability and minimize underlying algorithmic biases.</li>
+                    <li>• Compared model responses to identify inconsistencies and improve reasoning quality, factual accuracy, and instruction adherence.</li>
+                    <li>• Contributed to AI training and fine-tuning initiatives through structured data preparation and evaluation.</li>
+                    <li>• Assisted in identifying model weaknesses, reducing bias, and improving response reliability.</li>
+                    <li>• Supported the development of high-quality training datasets used for large language model optimization.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Content Manager</div>
+                <div class="company-meta">Snapcrate • May 2024 – Jul 2025</div>
+                <ul class="job-bullets">
+                    <li>• Managed updates to blogs, product manuals, marketing assets, and web documentation templates.</li>
+                    <li>• Ensured content accuracy, structural consistency, and strict alignment with evolving business requirements.</li>
+                    <li>• Maintained documentation quality metrics and improved clarity/accessibility of consumer-facing resources.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Digital Marketing Specialist</div>
+                <div class="company-meta">Freelance • Feb 2023 – May 2024</div>
+                <ul class="job-bullets">
+                    <li>• Improved targeted audience engagement footprints by 28% through custom content frameworks and technical campaign strategies.</li>
+                    <li>• Engineered email marketing systems achieving an average 32% open rate and an 8% click-through rate.</li>
+                    <li>• Amplified business inbound lead generation pipelines by 15% via collaborative content structures.</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>Education</h2>
-            <div class="edu-card">
-                <div class="job-title">Bachelor of Arts, Geography</div>
-                <div class="company-meta" style="margin-bottom: 0;">Veer Bahadur Singh Purvanchal University, Jaunpur</div>
+            <h2>Education & Credentials</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Bachelor of Arts, Geography</h3>
+                    <p>Veer Bahadur Singh Purvanchal University, Jaunpur</p>
+                </div>
+                <div class="edu-card">
+                    <h3>Industrial Training Institute (ITI) Certification</h3>
+                    <p>Ministry of Skill Development and Entrepreneurship, India</p>
+                </div>
+                <div class="edu-card">
+                    <h3>Diploma in Computer Applications</h3>
+                    <p>National Institute of Electronics & Information Technology (NIELIT)</p>
+                </div>
             </div>
         </section>
 
         <section style="text-align: center;">
-            <h2>Let's Connect</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">Interested in robust model evaluation, safety workflows, or data enrichment pipelines?</p>
-            <div class="cta-container">
-                <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">
-                    Connect on LinkedIn
-                </a>
-            </div>
+            <h2>Let's Collaborate</h2>
+            <p style="color: var(--text-muted);">Looking to deploy robust model evaluations, adversarial safety workflows, or high-performance dataset alignment strategies?</p>
+            <a href="https://www.linkedin.com/in/vaibhav-singh-90170018a/" target="_blank" class="btn">
+                Connect on LinkedIn
+            </a>
         </section>
 
         <footer>
-            &copy; 2026 Vaibhav Singh. Engineered for performance.
+            &copy; 2026 Vaibhav Singh. Designed for scale and alignment.
         </footer>
     </div>
 </body>
